@@ -104,11 +104,11 @@ func (m mockRC) Close() error {
 
 func TestGetNew(t *testing.T) {
 	var makeCalled, createCalled, initCalled bool
-	githubrepoMakeGithubRepo = func(s string) (clients.Repo, error) {
+	githubrepoMakeGitHubRepo = func(s string) (clients.Repo, error) {
 		makeCalled = true
 		return nil, nil
 	}
-	githubrepoCreateGithubRepoClientWithTransport = func(c context.Context, tr http.RoundTripper) clients.RepoClient {
+	githubrepoCreateGitHubRepoClientWithTransport = func(c context.Context, tr http.RoundTripper) clients.RepoClient {
 		createCalled = true
 		return mockRC{}
 	}
@@ -134,11 +134,11 @@ func TestGetNew(t *testing.T) {
 
 func TestGetExisting(t *testing.T) {
 	var makeCalled, createCalled, initCalled bool
-	githubrepoMakeGithubRepo = func(s string) (clients.Repo, error) {
+	githubrepoMakeGitHubRepo = func(s string) (clients.Repo, error) {
 		makeCalled = true
 		return nil, nil
 	}
-	githubrepoCreateGithubRepoClientWithTransport = func(c context.Context, tr http.RoundTripper) clients.RepoClient {
+	githubrepoCreateGitHubRepoClientWithTransport = func(c context.Context, tr http.RoundTripper) clients.RepoClient {
 		createCalled = true
 		return mockRC{}
 	}
@@ -166,10 +166,10 @@ func TestGetExisting(t *testing.T) {
 
 func TestClose(t *testing.T) {
 	var closeCalled bool
-	githubrepoMakeGithubRepo = func(s string) (clients.Repo, error) {
+	githubrepoMakeGitHubRepo = func(s string) (clients.Repo, error) {
 		return nil, nil
 	}
-	githubrepoCreateGithubRepoClientWithTransport = func(c context.Context, tr http.RoundTripper) clients.RepoClient {
+	githubrepoCreateGitHubRepoClientWithTransport = func(c context.Context, tr http.RoundTripper) clients.RepoClient {
 		return mockRC{}
 	}
 	initRepo = func(r clients.Repo, s string) error {
@@ -188,11 +188,11 @@ func TestClose(t *testing.T) {
 
 func TestRecreate(t *testing.T) {
 	var makeCalled, createCalled, initCalled bool
-	githubrepoMakeGithubRepo = func(s string) (clients.Repo, error) {
+	githubrepoMakeGitHubRepo = func(s string) (clients.Repo, error) {
 		makeCalled = true
 		return nil, nil
 	}
-	githubrepoCreateGithubRepoClientWithTransport = func(c context.Context, tr http.RoundTripper) clients.RepoClient {
+	githubrepoCreateGitHubRepoClientWithTransport = func(c context.Context, tr http.RoundTripper) clients.RepoClient {
 		createCalled = true
 		return mockRC{}
 	}
