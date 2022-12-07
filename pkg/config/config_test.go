@@ -326,7 +326,7 @@ func TestIsEnabled(t *testing.T) {
 			Expect:        false,
 		},
 		{
-			Name: "DissallowOptOut",
+			Name: "DisallowOptOut",
 			Org: OrgOptConfig{
 				OptOutStrategy:      true,
 				DisableRepoOverride: true,
@@ -375,7 +375,7 @@ func TestIsEnabled(t *testing.T) {
 			Expect:        false,
 		},
 		{
-			Name: "DissallowWithOrgRepo",
+			Name: "DisallowWithOrgRepo",
 			Org: OrgOptConfig{
 				OptOutStrategy:      true,
 				DisableRepoOverride: true,
