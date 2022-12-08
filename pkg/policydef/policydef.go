@@ -19,7 +19,7 @@
 // Allstar does. There should be an org-level config and repo-level
 // config. Each config should include the OptConfig defined in
 // github.com/ossf/allstar/pkg/config to determine if the policy is enabled or
-// disabled. The config package also provided helper functions to retreive
+// disabled. The config package also provided helper functions to retrieve
 // config from the repo.
 package policydef
 
@@ -42,7 +42,7 @@ type Result struct {
 	// the user of the problem and how to fix it.
 	NotifyText string
 
-	// Details are logged on failure. it should be serailizable to json and allow
+	// Details are logged on failure. it should be serializable to json and allow
 	// useful log querying.
 	Details interface{}
 }

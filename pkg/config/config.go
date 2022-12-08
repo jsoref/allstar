@@ -36,7 +36,7 @@ type OrgConfig struct {
 	OptConfig OrgOptConfig `json:"optConfig"`
 
 	// IssueLabel is the label used to tag, search, and identify GitHub Issues
-	// created by the bot. The defeault is specified by the operator of Allstar,
+	// created by the bot. The default is specified by the operator of Allstar,
 	// currently: "allstar"
 	IssueLabel string `json:"issueLabel"`
 
@@ -66,7 +66,7 @@ type OrgConfig struct {
 	Schedule *ScheduleConfig `json:"schedule"`
 }
 
-// OrgOptConfig is used in Allstar and policy-secific org-level config to
+// OrgOptConfig is used in Allstar and policy-specific org-level config to
 // define the opt in/out configuration.
 type OrgOptConfig struct {
 	// OptOutStrategy : set to true to change from opt-in to opt-out.
