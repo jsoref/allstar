@@ -70,11 +70,11 @@ type OrgConfig struct {
 	// Action defines which action to take, default log, other: issue...
 	Action string `json:"action"`
 
-	// PushAllowed defined if outside collaboraters are allowed to have push
+	// PushAllowed defined if outside collaborators are allowed to have push
 	// access, default true.
 	PushAllowed bool `json:"pushAllowed"`
 
-	// AdminAllowed defined if outside collaboraters are allowed to have admin
+	// AdminAllowed defined if outside collaborators are allowed to have admin
 	// access, default false.
 	AdminAllowed bool `json:"adminAllowed"`
 
@@ -172,7 +172,7 @@ type repositories interface {
 		[]*github.Team, *github.Response, error)
 }
 
-// Check performs the polcy check for Outside Collaborators based on the
+// Check performs the policy check for Outside Collaborators based on the
 // configuration stored in the org/repo, implementing policydef.Policy.Check()
 func (o Outside) Check(ctx context.Context, c *github.Client, owner,
 	repo string) (*policydef.Result, error) {

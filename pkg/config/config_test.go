@@ -326,7 +326,7 @@ func TestIsEnabled(t *testing.T) {
 			Expect:        false,
 		},
 		{
-			Name: "DissallowOptOut",
+			Name: "DisallowOptOut",
 			Org: OrgOptConfig{
 				OptOutStrategy:      true,
 				DisableRepoOverride: true,
@@ -375,7 +375,7 @@ func TestIsEnabled(t *testing.T) {
 			Expect:        false,
 		},
 		{
-			Name: "DissallowWithOrgRepo",
+			Name: "DisallowWithOrgRepo",
 			Org: OrgOptConfig{
 				OptOutStrategy:      true,
 				DisableRepoOverride: true,
@@ -446,13 +446,13 @@ func TestCreateIL(t *testing.T) {
 	tests := []struct {
 		Name       string
 		DotAllstar bool
-		DotGithub  bool
+		DotGitHub  bool
 		Expect     *instLoc
 	}{
 		{
 			Name:       "Allstar exists",
 			DotAllstar: true,
-			DotGithub:  true,
+			DotGitHub:  true,
 			Expect: &instLoc{
 				Exists: true,
 				Repo:   operator.OrgConfigRepo,
@@ -462,7 +462,7 @@ func TestCreateIL(t *testing.T) {
 		{
 			Name:       "Allstar exists2",
 			DotAllstar: true,
-			DotGithub:  false,
+			DotGitHub:  false,
 			Expect: &instLoc{
 				Exists: true,
 				Repo:   operator.OrgConfigRepo,
@@ -470,9 +470,9 @@ func TestCreateIL(t *testing.T) {
 			},
 		},
 		{
-			Name:       "Dot Github",
+			Name:       "Dot GitHub",
 			DotAllstar: false,
-			DotGithub:  true,
+			DotGitHub:  true,
 			Expect: &instLoc{
 				Exists: true,
 				Repo:   githubConfRepo,
@@ -482,7 +482,7 @@ func TestCreateIL(t *testing.T) {
 		{
 			Name:       "Neither",
 			DotAllstar: false,
-			DotGithub:  false,
+			DotGitHub:  false,
 			Expect: &instLoc{
 				Exists: false,
 			},
@@ -495,7 +495,7 @@ func TestCreateIL(t *testing.T) {
 				if repo == operator.OrgConfigRepo && test.DotAllstar {
 					return nil, nil, nil
 				}
-				if repo == githubConfRepo && test.DotGithub {
+				if repo == githubConfRepo && test.DotGitHub {
 					return nil, nil, nil
 				}
 				return nil, &github.Response{Response: &http.Response{StatusCode: http.StatusNotFound}}, errors.New("Not found")
